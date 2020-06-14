@@ -1,16 +1,13 @@
-# instareplica
+# InstaReplica
 
-Insta Replica
+Yet another replica of Instagram, to see how well I can go with Flutter! (It is highly convenient btw. Period.)
 
-## Getting Started
+<img src="https://user-images.githubusercontent.com/14874906/84601992-e26d4100-aea1-11ea-90d5-f0413e537db5.png" width=300>
 
-This project is a starting point for a Flutter application.
+## What's replicated?
+* Post UI (as it looks)
+* Double Tap to Like Animation
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## TODO
+* Add other interactions (liking with the button, and just showing Snackbar for other options)
+* Ummm, I'll think later
