@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class InstaLikeWidget extends StatefulWidget {
   @override
@@ -42,9 +43,10 @@ class _InstaLikeWidgetState extends State<InstaLikeWidget> with SingleTickerProv
               scale: _animation,
               child: Opacity(
                 opacity: 0.7,
-                child: Image(
-                  image: AssetImage('images/heart_filled.png'),
+                child: FaIcon(
+                  FontAwesomeIcons.solidHeart,
                   color: Colors.white,
+                  size: 96.0,
                 ),
               ),
             ),

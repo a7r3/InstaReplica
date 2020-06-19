@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'widgets/insta_like.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 void main() {
   runApp(MyApp());
@@ -63,7 +64,7 @@ class InstaPost extends StatelessWidget {
                       ],
                     ),
                     IconButton(
-                      icon: Icon(Icons.more_vert, color: Colors.grey,),
+                      icon: FaIcon(FontAwesomeIcons.ellipsisV, color: Colors.black, size: 16.0,),
                     ),
                   ],
                 ),
@@ -83,18 +84,18 @@ class InstaPost extends StatelessWidget {
                   Row(
                     children: [
                       IconButton(
-                        icon: ImageIcon(AssetImage('images/heart.png'), color: Colors.black,),
+                        icon: FaIcon(FontAwesomeIcons.heart, color: Colors.black,),
                       ),
                       IconButton(
-                        icon: ImageIcon(AssetImage('images/comment.png'), color: Colors.black),
+                        icon: FaIcon(FontAwesomeIcons.comment, color: Colors.black),
                       ),
                       IconButton(
-                        icon: ImageIcon(AssetImage('images/send.png'), color: Colors.black),
+                        icon: FaIcon(FontAwesomeIcons.paperPlane, color: Colors.black),
                       )
                     ],
                   ),
                   IconButton(
-                    icon: ImageIcon(AssetImage('images/save.png'), color: Colors.black,),
+                    icon: FaIcon(FontAwesomeIcons.bookmark, color: Colors.black,),
                   )
                 ],
               ),
