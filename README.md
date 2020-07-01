@@ -7,6 +7,7 @@ Yet another replica of Instagram, to see how well I can go with Flutter! (It is 
 ## What's replicated?
 * Post UI (as it looks)
 * Double Tap to Like Animation
+* Like: state management
 
 ## TODO
 * Add other interactions (liking with the button, and just showing Snackbar for other options)

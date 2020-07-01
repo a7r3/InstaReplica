@@ -5,7 +5,6 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 void main() {
   runApp(MyApp());
 }
-
 class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
@@ -21,7 +20,35 @@ class MyApp extends StatelessWidget {
   }
 }
 
-class InstaPost extends StatelessWidget {
+class InstaPost extends StatefulWidget {
+  @override
+  _InstaPostState createState() => _InstaPostState();
+}
+
+class _InstaPostState extends State<InstaPost> {
+
+  bool _isLiked = false;
+  int _likeCount = 419;
+
+  void _handleLikedByDoubleTap() {
+    setState(() {
+      if (!_isLiked) {
+        _isLiked = true;
+        _likeCount++;
+      }
+    });
+  }
+
+  void _handleLikedByButton() {
+    setState(() {
+      if (_isLiked)
+        _likeCount--;
+      else
+        _likeCount++;
+      _isLiked = !_isLiked;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -75,7 +102,7 @@ class InstaPost extends StatelessWidget {
                   Image(
                     image: AssetImage('images/spidey.png'),
                   ),
-                  InstaLikeWidget(),
+                  InstaLikeWidget(_handleLikedByDoubleTap),
                 ],
               ),
               Row(
@@ -84,7 +111,10 @@ class InstaPost extends StatelessWidget {
                   Row(
                     children: [
                       IconButton(
-                        icon: FaIcon(FontAwesomeIcons.heart, color: Colors.black,),
+                        icon: FaIcon(
+                          _isLiked ? FontAwesomeIcons.solidHeart : FontAwesomeIcons.heart,
+                          color: _isLiked ? Colors.red : Colors.black,),
+                        onPressed: _handleLikedByButton,
                       ),
                       IconButton(
                         icon: FaIcon(FontAwesomeIcons.comment, color: Colors.black),
@@ -101,7 +131,7 @@ class InstaPost extends StatelessWidget {
               ),
               Padding(
                 padding: const EdgeInsets.only(left: 12.0, top: 2.0),
-                child: Text("420 likes", style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold)),
+                child: Text("$_likeCount likes", style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold)),
               ),
               Padding(
                 padding: const EdgeInsets.only(left: 12.0, top: 4.0),

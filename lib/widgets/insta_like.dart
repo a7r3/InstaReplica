@@ -3,14 +3,22 @@ import 'package:flutter/widgets.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class InstaLikeWidget extends StatefulWidget {
+
+  InstaLikeWidget(this.likedCallback);
+
+  final VoidCallback likedCallback;
+
   @override
-  _InstaLikeWidgetState createState() => _InstaLikeWidgetState();
+  _InstaLikeWidgetState createState() => _InstaLikeWidgetState(likedCallback);
 }
 
 class _InstaLikeWidgetState extends State<InstaLikeWidget> with SingleTickerProviderStateMixin {
 
+  _InstaLikeWidgetState(this.likedCallback);
+
   AnimationController _controller;
   Animation<double> _animation, _opacityTween;
+  final VoidCallback likedCallback;
 
   @override
   void initState() {
@@ -27,8 +35,10 @@ class _InstaLikeWidgetState extends State<InstaLikeWidget> with SingleTickerProv
 
   void _startAnimation() {
     _controller.forward();
+    likedCallback.call();
 //    Scaffold.of(context).showSnackBar(SnackBar(content: Text('Tap'),));
   }
+
   @override
   Widget build(BuildContext context) {
     return Positioned.fill(
